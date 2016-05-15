@@ -7,10 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "css": "cpy src/css/app.css dist --rename=bundle.css",
     "compress": "uglifyjs dist/bundle.js -o dist/bundle.js",
-    "browserify": "md dist & browserify -e tsoutput/app.js -o dist/bundle.js -d",
+    "browserify": "md dist & browserify -e tsoutput/app.js -o dist/bundle.js -p tsify --debug",
     "tslint": "tslint src/ts/**.ts",
-    "babel": "babel tsoutput --out-dir tsoutput",
-    "build": "tsc && npm run tslint && npm run babel && npm run browserify && npm run css",
+    "babel": "babel tsoutput --out-dir tsoutput ",
+    "debug": "tsc && npm run tslint && npm run babel && npm run browserify && npm run css",
     "release": "npm run build && npm run compress"
   },
   "repository": {
@@ -36,6 +36,7 @@
     "cpy-cli": "^1.0.0",
     "postcss": "^5.0.21",
     "ts-loader": "^0.8.2",
+    "tsify": "^0.15.5",
     "tslint": "^3.10.2",
     "typescript": "^1.8.10",
     "typings": "^0.8.1",
