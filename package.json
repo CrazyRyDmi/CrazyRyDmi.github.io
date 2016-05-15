@@ -22,6 +22,7 @@
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "postcss": "^5.0.21",
+    "tslint": "^3.10.2",
     "typescript": "^1.8.10",
     "typings": "^0.8.1"
   }
