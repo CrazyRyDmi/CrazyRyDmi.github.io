@@ -11,7 +11,7 @@
     "tslint": "tslint src/ts/**.ts",
     "babel": "babel tsoutput --out-dir tsoutput ",
     "debug": "tsc && npm run tslint && npm run babel && npm run browserify && npm run css",
-    "release": "npm run build && npm run compress"
+    "release": "npm run debug && npm run compress"
   },
   "repository": {
     "type": "git",
