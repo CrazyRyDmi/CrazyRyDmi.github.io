@@ -3,6 +3,7 @@
   "version": false,
   "dependencies": {},
   "ambientDependencies": {
+    "systemjs": "registry:dt/systemjs#0.18.4+20160417155658",
     "three": "registry:dt/three#0.0.0+20160501153841"
   }
 }
