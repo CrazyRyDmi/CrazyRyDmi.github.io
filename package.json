@@ -1,0 +1,28 @@
+{
+  "name": "crazyrydmi.github.io",
+  "version": "0.1.0",
+  "description": "My personal home page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrazyRyDmi/CrazyRyDmi.github.io.git"
+  },
+  "keywords": [
+    "homepage"
+  ],
+  "author": "Rybak Dmitry <rydmi@yandex.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CrazyRyDmi/CrazyRyDmi.github.io/issues"
+  },
+  "homepage": "https://github.com/CrazyRyDmi/CrazyRyDmi.github.io#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "postcss": "^5.0.21",
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1"
+  }
+}

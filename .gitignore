@@ -1,3 +1,6 @@
+dist
+tsoutput
+
 # Logs
 logs
 *.log
