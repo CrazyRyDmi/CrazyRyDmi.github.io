@@ -44,6 +44,8 @@ let shaderMaterial = new THREE.ShaderMaterial({
 
 let geometry = new THREE.PlaneGeometry(1.0, 0.7);
 let planeMesh = new THREE.Mesh(geometry, shaderMaterial);
+planeMesh.translateX(0.5);
+planeMesh.translateY(0.5);
 
 scene.add(planeMesh);
 
@@ -52,7 +54,7 @@ renderer.setClearColor("black");
 
 document.body.appendChild(renderer.domElement);
 
-let camera = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, -0.5, -1.0, 1.0);
+let camera = new THREE.OrthographicCamera(0.0, 1.0, 1.0, 0.0, -1.0, 1.0);
 
 let resize = () => {
     // camera.aspect = window.innerWidth / window.innerHeight;
