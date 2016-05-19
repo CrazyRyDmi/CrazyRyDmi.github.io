@@ -11,7 +11,7 @@
     "browserify": "md dist & browserify -e tsoutput/app.js -o dist/bundle.js --debug",
     "tslint": "tslint src/ts/**.ts",
     "babel": "babel tsoutput --out-dir tsoutput ",
-    "debug": "tsc && npm run tslint && npm run babel && npm run browserify && npm run css",
+    "debug": "tsc && npm run tslint && npm run babel && npm run browserify && npm run css && npm run images",
     "release": "npm run debug && npm run compress"
   },
   "repository": {
