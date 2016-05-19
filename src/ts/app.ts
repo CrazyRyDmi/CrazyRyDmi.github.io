@@ -28,7 +28,7 @@ let shaderMaterial = new THREE.ShaderMaterial({
     fragmentShader: fs
 });
 
-let geometry = new THREE.PlaneGeometry(0.7, 0.7);
+let geometry = new THREE.PlaneGeometry(1.0, 0.7);
 let planeMesh = new THREE.Mesh(geometry, shaderMaterial);
 
 scene.add(planeMesh);

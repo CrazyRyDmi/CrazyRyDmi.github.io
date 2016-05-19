@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "images": "cpy src/images/* dist/images",
     "css": "cpy src/css/app.css dist --rename=bundle.css",
     "compress": "uglifyjs dist/bundle.js -o dist/bundle.js",
     "browserify": "md dist & browserify -e tsoutput/app.js -o dist/bundle.js --debug",
