@@ -3,22 +3,36 @@ import * as THREE from "three";
 
 /* tslint:disable */
 let vs = `
+    varying vec2 texPos;
+
     void main() {
+        texPos = position.xy;
     	vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
     	gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
     }
 `;
 
 let fs = `
+        uniform sampler2D texture;
+        varying vec2 texPos;
+
         void main() {
         vec3 coord = normalize(gl_FragCoord.xyz);
-        gl_FragColor = vec4(coord.x, coord.y, coord.z, 1.0);
+        vec4 texColor = texture2D( texture, texPos );
+        
+        gl_FragColor = texColor * vec4(coord.x, coord.y, coord.z, 1.0);
     }
 `;
 
 /* tslint:enable */
+let manager = new THREE.LoadingManager();
+let loader = new THREE.TextureLoader(manager);
 
+let texture = loader.load("dist/images/Floor.jpg");
+texture.wrapS = THREE.MirroredRepeatWrapping;
+texture.wrapT = THREE.MirroredRepeatWrapping;
 let uniforms = {
+    texture: { type: "t", value: texture }
 };
 
 let scene = new THREE.Scene();
