@@ -1,34 +1,14 @@
 import "babel-polyfill";
 import * as THREE from "three";
+import base_fs = require("../glsl/base-fs.glsl");
+import base_vs = require("../glsl/base-vs.glsl");
 
-/* tslint:disable */
-let vs = `
-    varying vec2 texPos;
+console.log(base_fs);
 
-    void main() {
-        texPos = position.xy;
-    	vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-    	gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-    }
-`;
-
-let fs = `
-        uniform sampler2D texture;
-        varying vec2 texPos;
-
-        void main() {
-        vec3 coord = normalize(gl_FragCoord.xyz);
-        vec4 texColor = texture2D( texture, texPos );
-        
-        gl_FragColor = texColor * vec4(coord.x, coord.y, coord.z, 1.0);
-    }
-`;
-
-/* tslint:enable */
 let manager = new THREE.LoadingManager();
 let loader = new THREE.TextureLoader(manager);
 
-let texture = loader.load("dist/images/Floor.jpg");
+let texture = loader.load("images/Floor.jpg");
 texture.wrapS = THREE.MirroredRepeatWrapping;
 texture.wrapT = THREE.MirroredRepeatWrapping;
 let uniforms = {
@@ -38,8 +18,8 @@ let uniforms = {
 let scene = new THREE.Scene();
 let shaderMaterial = new THREE.ShaderMaterial({
     uniforms: uniforms,
-    vertexShader: vs,
-    fragmentShader: fs
+    vertexShader: base_vs,
+    fragmentShader: base_fs
 });
 
 let geometry = new THREE.PlaneGeometry(1.0, 0.7);

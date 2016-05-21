@@ -1,6 +1,10 @@
 var webpack = require("webpack");
-module.exports = {  
-  entry: './src/ts/app.ts',
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+
+module.exports = {
+  entry: {
+    ts: './src/ts/app.ts'
+  },
   output: {
     filename: './dist/bundle.js'
   },
@@ -15,7 +19,14 @@ module.exports = {
   ],
   module: {
     loaders: [
-      { test: /\.ts$/, loader: 'babel!ts' }
+      {
+        test: /\.ts$/,
+        loader: 'babel!ts'
+      },
+      {
+        test: /\.glsl$/,
+        loader: 'webpack-glsl'
+      }
     ]
   }
 }
