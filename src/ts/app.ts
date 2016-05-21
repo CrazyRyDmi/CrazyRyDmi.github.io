@@ -7,6 +7,7 @@ let manager = new THREE.LoadingManager();
 let loader = new THREE.TextureLoader(manager);
 
 let texture = loader.load("images/Floor.jpg");
+let rsquare = loader.load("images/rsquare.png");
 texture.wrapS = THREE.MirroredRepeatWrapping;
 texture.wrapT = THREE.MirroredRepeatWrapping;
 let uniforms = {
