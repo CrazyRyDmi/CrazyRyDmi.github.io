@@ -1,5 +1,6 @@
-import "babel-polyfill";
-import * as THREE from "three";
+// import "babel-polyfill";
+// import * as THREE from "three";
+
 import base_fs = require("../glsl/base-fs.glsl");
 import base_vs = require("../glsl/base-vs.glsl");
 
@@ -7,11 +8,16 @@ let manager = new THREE.LoadingManager();
 let loader = new THREE.TextureLoader(manager);
 
 let texture = loader.load("images/Floor.jpg");
-let rsquare = loader.load("images/rsquare.png");
 texture.wrapS = THREE.MirroredRepeatWrapping;
 texture.wrapT = THREE.MirroredRepeatWrapping;
+
+let squareTex = loader.load("images/rsquare.png");
+squareTex.wrapS = THREE.MirroredRepeatWrapping;
+squareTex.wrapT = THREE.MirroredRepeatWrapping;
+
 let uniforms = {
-    texture: { type: "t", value: texture }
+    texture: { type: "t", value: texture },
+    squareTex: { type: "t", value: squareTex }
 };
 
 let scene = new THREE.Scene();
@@ -30,7 +36,6 @@ scene.add(planeMesh);
 
 let renderer = new THREE.WebGLRenderer();
 renderer.setClearColor("black");
-
 document.body.appendChild(renderer.domElement);
 
 let camera = new THREE.OrthographicCamera(0.0, 1.0, 1.0, 0.0, -1.0, 1.0);

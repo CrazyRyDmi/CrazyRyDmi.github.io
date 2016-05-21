@@ -17,7 +17,7 @@ module.exports = {
   },
   // Add minification
   plugins: [
-    new webpack.optimize.UglifyJsPlugin(),
+    // new webpack.optimize.UglifyJsPlugin(),
     new ExtractTextPlugin("./dist/bundle.css", {
       allChunks: true
     })
