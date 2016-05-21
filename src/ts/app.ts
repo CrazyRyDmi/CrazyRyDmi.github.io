@@ -1,5 +1,5 @@
 // import "babel-polyfill";
-// import * as THREE from "three";
+import * as THREE from "./ThreeProxy";
 
 import base_fs = require("../glsl/base-fs.glsl");
 import base_vs = require("../glsl/base-vs.glsl");
