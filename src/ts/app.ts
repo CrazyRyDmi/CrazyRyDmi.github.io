@@ -43,7 +43,8 @@ let camera = new THREE.OrthographicCamera(0.0, 1.0, 1.0, 0.0, -1.0, 1.0);
 let resize = () => {
     // camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    // renderer.setSize(window.innerWidth - 20, window.innerHeight - 20);
+    renderer.setSize(window.innerWidth, window.innerHeight - 5);
 };
 
 let animate = (time: number) => {

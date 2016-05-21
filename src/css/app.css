@@ -1,6 +1,6 @@
 body{
-    background: linear-gradient(to top, #ffffff, #d2deff);
+    background: white;
+    text-align: center;
     height: 100vh;
-    margin: 0;
-    padding: 0;
+    margin: auto;
 }
