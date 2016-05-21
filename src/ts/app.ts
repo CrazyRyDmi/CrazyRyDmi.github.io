@@ -31,8 +31,19 @@ let geometry = new THREE.PlaneGeometry(1.0, 0.7);
 let planeMesh = new THREE.Mesh(geometry, shaderMaterial);
 planeMesh.translateX(0.5);
 planeMesh.translateY(0.5);
-
 scene.add(planeMesh);
+
+// let textGeometry = new THREE.TextGeometry("Hello World!", {
+//     font: new THREE.Font("Tahoma"),
+//     size: 14,
+//     height: 10,
+//     curveSegments: null,
+//     bevelEnabled: false,
+//     bevelThickness: 10,
+//     bevelSize: 10
+// });
+// let textMesh = new THREE.Mesh(textGeometry, new THREE.MeshBasicMaterial({ color: "red" }));
+// scene.add(textMesh);
 
 let renderer = new THREE.WebGLRenderer();
 renderer.setClearColor("black");
