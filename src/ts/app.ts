@@ -3,8 +3,6 @@ import * as THREE from "three";
 import base_fs = require("../glsl/base-fs.glsl");
 import base_vs = require("../glsl/base-vs.glsl");
 
-console.log(base_fs);
-
 let manager = new THREE.LoadingManager();
 let loader = new THREE.TextureLoader(manager);
 
