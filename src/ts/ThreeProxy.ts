@@ -1,1 +1,1 @@
-export = THREE;
+export default THREE;
