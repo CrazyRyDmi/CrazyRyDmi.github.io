@@ -4,7 +4,8 @@
         "target": "es6",
         "noImplicitAny": true,
         "sourceMap": true,
-        "outDir" : "./tsoutput/ts"
+        "outDir" : "./tsoutput/ts",
+        "allowSyntheticDefaultImports": true
     },
     "exclude": [
         "node_modules",
