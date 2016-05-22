@@ -18291,8 +18291,3 @@ declare module 'lodash' {
 import main = require('~lodash/index');
 export = main;
 }
-
-declare module "mylodash" {
-  import main = require('~lodash/index');
-  export default main.clone;
-}
