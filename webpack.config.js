@@ -29,7 +29,7 @@ module.exports = {
         loader: "babel!ts"
       },
       {
-        test: /\.glsl$/,
+        test: /\.glsl$|\.fs$|\.vs$/,
         loader: "webpack-glsl"
       },
       {

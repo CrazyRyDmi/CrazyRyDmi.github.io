@@ -1,3 +1,4 @@
+
 uniform sampler2D texture;
 uniform sampler2D squareTex;
 varying vec2 texPos;

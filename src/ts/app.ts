@@ -1,8 +1,13 @@
 // import "babel-polyfill"; 
 import THREE from "./ThreeProxy";
 
-import base_fs from "../glsl/base-fs.glsl";
-import base_vs from "../glsl/base-vs.glsl";
+import base_fs from "../glsl/base.fs.glsl";
+import base_vs from "../glsl/base.vs.glsl";
+
+import loading_fs from "../glsl/LoadingEffects/loading.fs.glsl";
+import loading_vs from "../glsl/LoadingEffects/loading.vs.glsl";
+
+console.log(base_fs);
 
 let manager = new THREE.LoadingManager();
 let loader = new THREE.TextureLoader(manager);
@@ -46,18 +51,20 @@ scene.add(planeMesh);
 // scene.add(textMesh);
 
 let renderer = new THREE.WebGLRenderer();
-renderer.setClearColor("black");
+renderer.setClearColor("white");
 document.body.appendChild(renderer.domElement);
 
 let camera = new THREE.OrthographicCamera(0.0, 1.0, 1.0, 0.0, -1.0, 1.0);
 
 let resize = () => {
-    // camera.aspect = window.innerWidth / window.innerHeight;
+    let aspect = window.innerWidth / window.innerHeight;
+    camera.top = aspect;
     camera.updateProjectionMatrix();
     // renderer.setSize(window.innerWidth - 20, window.innerHeight - 20);
     renderer.setSize(window.innerWidth, window.innerHeight - 5);
 };
 
+let prevTime: number = 0;
 let animate = (time: number) => {
     camera.updateProjectionMatrix();
     renderer.render(scene, camera);
@@ -66,4 +73,4 @@ let animate = (time: number) => {
 
 window.onresize = resize;
 resize();
-animate(Date.now());
+// animate(prevTime = Date.now());
