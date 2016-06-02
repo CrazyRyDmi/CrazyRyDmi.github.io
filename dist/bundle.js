@@ -60,6 +60,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	console.log(_baseFs2.default);
 	var manager = new _ThreeProxy2.default.LoadingManager();
 	var loader = new _ThreeProxy2.default.TextureLoader(manager);
 	var texture = loader.load("images/Floor.jpg");
@@ -95,15 +96,17 @@
 	// let textMesh = new THREE.Mesh(textGeometry, new THREE.MeshBasicMaterial({ color: "red" }));
 	// scene.add(textMesh);
 	var renderer = new _ThreeProxy2.default.WebGLRenderer();
-	renderer.setClearColor("black");
+	renderer.setClearColor("white");
 	document.body.appendChild(renderer.domElement);
 	var camera = new _ThreeProxy2.default.OrthographicCamera(0.0, 1.0, 1.0, 0.0, -1.0, 1.0);
 	var resize = function resize() {
-	    // camera.aspect = window.innerWidth / window.innerHeight;
+	    var aspect = window.innerHeight / window.innerWidth;
+	    camera.top = aspect;
 	    camera.updateProjectionMatrix();
 	    // renderer.setSize(window.innerWidth - 20, window.innerHeight - 20);
 	    renderer.setSize(window.innerWidth, window.innerHeight - 5);
 	};
+	var prevTime = 0;
 	var animate = function animate(time) {
 	    camera.updateProjectionMatrix();
 	    renderer.render(scene, camera);
@@ -111,7 +114,7 @@
 	};
 	window.onresize = resize;
 	resize();
-	animate(Date.now());
+	// animate(prevTime = Date.now());
 
 /***/ },
 /* 1 */
@@ -128,13 +131,13 @@
 /* 2 */
 /***/ function(module, exports) {
 
-	module.exports = "uniform sampler2D texture;\r\nuniform sampler2D squareTex;\r\nvarying vec2 texPos;\r\n\r\nvoid main() {\r\n    vec3 coord = normalize(gl_FragCoord.xyz);\r\n    vec4 texColor = texture2D( texture, texPos );\r\n    vec4 squareColor = texture2D(squareTex, texPos);\r\n\r\n    // gl_FragColor = texColor * squareColor * vec4(coord.x, coord.y, coord.z, 1.0);\r\n    gl_FragColor = texColor * vec4(coord.x, coord.y, coord.z, 1.0);\r\n}"
+	module.exports = "\r\nuniform sampler2D texture;\r\nuniform sampler2D squareTex;\r\nvarying vec2 texPos;\r\n\r\nvoid main() {\r\n    vec3 coord = normalize(gl_FragCoord.xyz);\r\n    vec4 texColor = texture2D( texture, texPos );\r\n    vec4 squareColor = texture2D(squareTex, texPos);\r\n\r\n    // gl_FragColor = texColor * squareColor * vec4(coord.x, coord.y, coord.z, 1.0);\r\n    gl_FragColor = texColor * vec4(coord.x, coord.y, coord.z, 1.0);\r\n}"
 
 /***/ },
 /* 3 */
 /***/ function(module, exports) {
 
-	module.exports = "varying vec2 texPos;\r\n\r\nvoid main() {\r\n    texPos = position.xy;\r\n    vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );\r\n    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\r\n}"
+	module.exports = "varying vec2 texPos;\r\n\r\nvoid main() {\r\n    texPos = uv.xy;\r\n    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\r\n}"
 
 /***/ }
 /******/ ]);

@@ -57,7 +57,7 @@ document.body.appendChild(renderer.domElement);
 let camera = new THREE.OrthographicCamera(0.0, 1.0, 1.0, 0.0, -1.0, 1.0);
 
 let resize = () => {
-    let aspect = window.innerWidth / window.innerHeight;
+    let aspect = window.innerHeight / window.innerWidth;
     camera.top = aspect;
     camera.updateProjectionMatrix();
     // renderer.setSize(window.innerWidth - 20, window.innerHeight - 20);

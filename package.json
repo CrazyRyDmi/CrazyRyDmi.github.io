@@ -4,7 +4,7 @@
   "description": "My personal home page",
   "main": "index.js",
   "scripts": {
-    "start" : "webpack-dev-server --inline",
+    "start": "webpack-dev-server --inline",
     "test": "echo \"Error: no test specified\" && exit 1",
     "images": "cpy src/images/* dist/images",
     "glsl": "cpy src/glsl/* tsoutput/glsl",
@@ -57,7 +57,7 @@
     "tsify": "^0.15.5",
     "tslint": "^3.10.2",
     "typescript": "^1.8.10",
-    "typings": "^0.8.1",
+    "typings": "1.0.4",
     "uglifyjs": "^2.4.10",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
