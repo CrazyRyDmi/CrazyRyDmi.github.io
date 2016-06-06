@@ -114,7 +114,7 @@
 	};
 	window.onresize = resize;
 	resize();
-	// animate(prevTime = Date.now());
+	animate(prevTime = Date.now());
 
 /***/ },
 /* 1 */
