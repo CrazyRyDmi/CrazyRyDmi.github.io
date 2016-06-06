@@ -73,4 +73,4 @@ let animate = (time: number) => {
 
 window.onresize = resize;
 resize();
-// animate(prevTime = Date.now());
+animate(prevTime = Date.now());
