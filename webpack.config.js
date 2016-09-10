@@ -43,7 +43,7 @@ const plugins = [
   new HtmlWebpackPlugin({
     template: path.join(__dirname, "./src/html/index.hbs"),
     inject: false,
-    filename: "../index.html",
+    filename: "index.html",
     isRelease: isRelease,
     title: ""
   })
@@ -63,7 +63,7 @@ module.exports = {
     ts: "./src/ts/app.ts"
   },
   output: {
-    filename: "bundle.js",
+    filename: "./bundle.js",
     path: path.join(__dirname, "/dist"),
     publicPath: "/"
   },
