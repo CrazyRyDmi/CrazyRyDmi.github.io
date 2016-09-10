@@ -11,14 +11,17 @@ import base_vs from "../glsl/base.vs.glsl";
 import loading_fs from "../glsl/LoadingEffects/loading.fs.glsl";
 import loading_vs from "../glsl/LoadingEffects/loading.vs.glsl";
 
+import floorImage from "../../images/Floor.jpg";
+import rsquareImage from "../../images/rsquare.png";
+
 let manager = new THREE.LoadingManager();
 let loader = new THREE.TextureLoader(manager);
 
-let texture = loader.load("images/Floor.jpg");
+let texture = loader.load(floorImage);
 texture.wrapS = THREE.MirroredRepeatWrapping;
 texture.wrapT = THREE.MirroredRepeatWrapping;
 
-let squareTex = loader.load("images/rsquare.png");
+let squareTex = loader.load(rsquareImage);
 squareTex.wrapS = THREE.MirroredRepeatWrapping;
 squareTex.wrapT = THREE.MirroredRepeatWrapping;
 

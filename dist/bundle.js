@@ -62,14 +62,22 @@
 	
 	var _baseVs2 = _interopRequireDefault(_baseVs);
 	
+	var _Floor = __webpack_require__(302);
+	
+	var _Floor2 = _interopRequireDefault(_Floor);
+	
+	var _rsquare = __webpack_require__(303);
+	
+	var _rsquare2 = _interopRequireDefault(_rsquare);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var manager = new _ThreeProxy2.default.LoadingManager();
 	var loader = new _ThreeProxy2.default.TextureLoader(manager);
-	var texture = loader.load("images/Floor.jpg");
+	var texture = loader.load(_Floor2.default);
 	texture.wrapS = _ThreeProxy2.default.MirroredRepeatWrapping;
 	texture.wrapT = _ThreeProxy2.default.MirroredRepeatWrapping;
-	var squareTex = loader.load("images/rsquare.png");
+	var squareTex = loader.load(_rsquare2.default);
 	squareTex.wrapS = _ThreeProxy2.default.MirroredRepeatWrapping;
 	squareTex.wrapT = _ThreeProxy2.default.MirroredRepeatWrapping;
 	var uniforms = {
@@ -8088,6 +8096,18 @@
 /***/ function(module, exports) {
 
 	module.exports = "varying vec2 texPos;\r\n\r\nvoid main() {\r\n    texPos = uv.xy;\r\n    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\r\n}"
+
+/***/ },
+/* 302 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "img/Floor-6MIBGFHWMs.jpg";
+
+/***/ },
+/* 303 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "img/rsquare-1hr1a_fIcX.png";
 
 /***/ }
 /******/ ]);

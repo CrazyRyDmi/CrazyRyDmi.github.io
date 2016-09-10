@@ -50,12 +50,12 @@ const plugins = [
 ];
 
 if (isRelease) {
-    plugins.push(new webpack.optimize.DedupePlugin());
-    plugins.push(new webpack.optimize.UglifyJsPlugin());
-    console.log("----------------------------");
-    console.log("Using release configuration.");
-    console.log("----------------------------");
-    console.log();
+  plugins.push(new webpack.optimize.DedupePlugin());
+  plugins.push(new webpack.optimize.UglifyJsPlugin());
+  console.log("----------------------------");
+  console.log("Using release configuration.");
+  console.log("----------------------------");
+  console.log();
 }
 
 module.exports = {
@@ -80,6 +80,10 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.hbs$/,
+        loader: "handlebars"
+      },
+      {
         test: /\.ts$/,
         loader: `babel!ts!tslint!ifdef?${ifDefOptions}`
       },
@@ -90,6 +94,10 @@ module.exports = {
       {
         test: /app\.less$/,
         loader: extractCss.extract("style-loader", "css!postcss!less")
+      },
+      {
+        test: /\.(png)|(jpg)|(gif)|(ico)$/,
+        loader: "file?name=img/[name]-[sha512:hash:base64:10].[ext]"
       },
       {
         test: /\.less$/,
