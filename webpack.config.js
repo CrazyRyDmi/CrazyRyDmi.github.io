@@ -43,7 +43,7 @@ const plugins = [
   new HtmlWebpackPlugin({
     template: path.join(__dirname, "./src/html/index.hbs"),
     inject: false,
-    filename: "index.html",
+    filename: "../index.html",
     isRelease: isRelease,
     title: ""
   })
