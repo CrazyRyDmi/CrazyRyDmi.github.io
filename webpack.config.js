@@ -14,7 +14,7 @@ const autoprefixer = require("autoprefixer");
 const argv = minimist(process.argv.slice(2));
 const isRelease = !!argv.release;
 
-const extractCss = new ExtractTextPlugin("./themes/bundle.css", {
+const extractCss = new ExtractTextPlugin("./dist/themes/bundle.css", {
   allChunks: true
 });
 
@@ -63,8 +63,8 @@ module.exports = {
     ts: "./src/ts/app.ts"
   },
   output: {
-    filename: "./bundle.js",
-    path: path.join(__dirname, "/dist"),
+    filename: "./dist/bundle.js",
+    path: path.join(__dirname, ""),
     publicPath: "/"
   },
   // Turn on sourcemaps
@@ -97,7 +97,7 @@ module.exports = {
       },
       {
         test: /\.(png)|(jpg)|(gif)|(ico)$/,
-        loader: "file?name=img/[name]-[sha512:hash:base64:10].[ext]"
+        loader: "file?name=dist/img/[name]-[sha512:hash:base64:10].[ext]"
       },
       {
         test: /\.less$/,
