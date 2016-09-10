@@ -11,8 +11,8 @@ import base_vs from "../glsl/base.vs.glsl";
 import loading_fs from "../glsl/LoadingEffects/loading.fs.glsl";
 import loading_vs from "../glsl/LoadingEffects/loading.vs.glsl";
 
-import floorImage from "../../images/Floor.jpg";
-import rsquareImage from "../../images/rsquare.png";
+import floorImage from "../images/Floor.jpg";
+import rsquareImage from "../images/rsquare.png";
 
 let manager = new THREE.LoadingManager();
 let loader = new THREE.TextureLoader(manager);
