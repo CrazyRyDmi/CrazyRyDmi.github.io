@@ -1,4 +1,8 @@
-// import "babel-polyfill"; 
+// Include styles
+import "../css/app.less";
+// Include polyfills
+import "babel-polyfill";
+
 import THREE from "./ThreeProxy";
 
 import base_fs from "../glsl/base.fs.glsl";
@@ -6,8 +10,6 @@ import base_vs from "../glsl/base.vs.glsl";
 
 import loading_fs from "../glsl/LoadingEffects/loading.fs.glsl";
 import loading_vs from "../glsl/LoadingEffects/loading.vs.glsl";
-
-console.log(base_fs);
 
 let manager = new THREE.LoadingManager();
 let loader = new THREE.TextureLoader(manager);
