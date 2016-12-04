@@ -4,10 +4,10 @@
   "description": "My personal home page",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --compress --host 0.0.0.0 --port 8080 --progress",
-    "debug": "webpack",
-    "release": "webpack --release",
-    "start-release": "webpack-dev-server --release --compress --host 0.0.0.0 --port 8080 --progress"
+    "start": "npm install && webpack-dev-server --inline --compress --host 0.0.0.0 --port 8080 --progress",
+    "debug": "npm install && webpack",
+    "release": "npm install && webpack --bail --release",
+    "start-release": "npm install && webpack-dev-server --release --compress --host 0.0.0.0 --port 8080 --progress"
   },
   "repository": {
     "type": "git",
@@ -55,21 +55,21 @@
     "postcss-loader": "^0.13.0",
     "stream-buffers": "^3.0.0",
     "style-loader": "^0.13.1",
-    "ts-loader": "^0.8.2",
+    "ts-loader": "^1.2.2",
     "tsify": "^0.15.5",
     "tslint": "^3.10.2",
     "tslint-loader": "^2.1.5",
-    "typescript": "^2.0.0",
-    "typings": "1.0.4",
+    "typescript": "^2.0.6",
     "uglifyjs": "^2.4.10",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
     "webpack-glsl-loader": "^1.0.1"
   },
   "dependencies": {
+    "@types/three": "0.0.27",
     "babel-polyfill": "^6.8.0",
     "babel-runtime": "^6.6.1",
     "systemjs": "^0.19.27",
-    "three": "^0.75.0"
+    "three": "^0.81.2"
   }
 }
