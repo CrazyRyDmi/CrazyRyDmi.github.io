@@ -43,6 +43,7 @@ planeMesh.translateX(0.5);
 planeMesh.translateY(0.5);
 scene.add(planeMesh);
 
+
 // let textGeometry = new THREE.TextGeometry("Hello World!", {
 //     font: new THREE.Font("Tahoma"),
 //     size: 14,
